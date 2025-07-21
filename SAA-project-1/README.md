@@ -6,7 +6,7 @@ This personal project delivers a low‑latency, highly available, and secure e�
 
 ## 🚀 Project Overview
 
-- **Goal:** Design an online storefront that  
+- **Goal:** Design an online storefront that
   1. Serves pages and images with minimal latency  
   2. Persists user profiles and order history in a secure relational store  
   3. Scales automatically, with built‑in fault tolerance  
@@ -20,18 +20,17 @@ This personal project delivers a low‑latency, highly available, and secure e�
   <img src="./assets/e-commerce-1.png" alt="Architectural Diagram for an e-commerce portal
 " />
 </div>
-![Architecture Diagram](architecture-diagram.png)
 
 _Key components_  
-1. **Edge CDN (CloudFront):** Caches static assets (product images, CSS, JS) at POPs across Africa.  
+1. **Edge CDN (CloudFront):** Caches static assets (product images, frontend(html, CSS, JS)) at POPs across Africa (edge locations in Lagos, Nairobi, Johannesburg and Cape Town).  
 2. **API Gateway + Lambda:** Serverless front door for dynamic requests; scales on demand, zero server management.  
-3. **Aurora Serverless (MySQL):** Auto‑scaling relational database for user profiles and orders.  
-4. **S3 + CloudFront:** Versioned, encrypted buckets for product images, behind a secure CDN.  
+3. **Aurora Serverless (PostgreSQL):** Auto‑scaling relational database for user profiles and orders.  
+4. **S3 + CloudFront:** Versioned and encrypted buckets for static frontend, product images, behind a secure CDN.  
 5. **WAF & Shield:** Protect against DDoS and OWASP Top 10 web exploits.  
-6. **VPC + Private Subnets:** Lambdas and RDS live in private subnets, with NAT for outbound updates.  
+6. **VPC + Private Subnets:** RDS live in private subnets, with NAT for outbound updates.  
 7. **Cognito:** User authentication and fine‑grained IAM access.  
-8. **CloudWatch & X‑Ray:** Real‑time metrics, centralized logs, and distributed tracing for performance tuning.  
-9. **Cost Controls:** Budget alarms, rightsizing recommendations, and reserved concurrency caps. :contentReference[oaicite:1]{index=1}  
+8. **CloudWatch & CloudTrail:** Real‑time metrics, centralized logs, and distributed audits and compliance.  
+9. **Cost Controls:** Budget alarms, rightsizing recommendations, and reserved concurrency caps.
 
 ---
 
@@ -42,10 +41,10 @@ _Key components_
 | **Latency**      | CloudFront at regional edge locations            | < 100 ms page loads       |
 | **Availability** | Aurora Serverless + multi‑AZ deployment          | 99.99% uptime             |
 | **Scalability**  | API Gateway + Lambda on demand                   | Instant auto‑scaling      |
-| **Security**     | TLS Everywhere, KMS‑encrypted S3 & RDS volumes   | Data fully encrypted      |
+| **Security**     | TLS (client to server encryption), AWS KMS‑encrypted S3 & RDS volumes  | Data fully encrypted |
 | **Access Control**| Cognito for auth + IAM roles for service access | Least‑privilege enforced  |
-| **Monitoring**   | CloudWatch metrics + X‑Ray tracing               | Proactive issue spotting  |
-| **Cost**         | Auto‑pause Aurora, reserved concurrency caps     | Cost predictability       |
+| **Monitoring**   | CloudWatch metrics + CloudTrail audits           | Proactive issue spotting  |
+| **Cost**         | Auto‑pause Aurora, budgets and alarms | Cost predictability |
 
 ---
 
@@ -62,21 +61,10 @@ _Key components_
 
 - **Dashboards:** CloudWatch custom dashboards for latency, error rates, and cost.  
 - **Logs:** Centralized application logs in CloudWatch Logs, with retention policies.  
-- **Tracing:** AWS X‑Ray to pinpoint bottlenecks in Lambda invocations.  
+- **Auditing:** AWS CloudTrail enables governance, compliance, operational auditing, and security of ecommerce workloads.  
 
 ---
 
 ## 💡 Next Steps
 
-- Add CI/CD (CodePipeline) for automated Terraform deployments  
-- Implement WebSocket notifications via API Gateway  
-- Integrate a GraphQL layer for richer frontend interactions  
-- Explore multi‑region failover for disaster recovery  
-
----
-
-## 🙋 About Our Squad
-
-Part of the SAA Squad Project 1—an AWS architecture challenge to design cost‑effective, fault‑tolerant solutions under real‑world constraints. Reach out if you’d like to collaborate or give feedback!
-
-
+- For the sake of this project, I'll keep updating this architecture based on further itterative requirements while i go extra creative with my personal project. Thanks
