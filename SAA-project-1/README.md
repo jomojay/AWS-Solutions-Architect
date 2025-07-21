@@ -1,6 +1,6 @@
 # SAA‑Ecommerce‑Portal 🛒☁️
 
-This personal project delivers a low‑latency, highly available, and secure e‑commerce portal for African customers, complete with relational user data storage and image hosting. Built in weeks 2 of my AWS SAA program, it demonstrates cloud architecture best practices under budget constraints.
+This personal project delivers a low‑latency, highly available, and secure e‑commerce portal for African customers, complete with relational user data storage and image hosting. Built in week 2 of my AWS SAA program, it demonstrates cloud architecture best practices under budget constraints.
 
 ---
 
@@ -67,4 +67,4 @@ _Key components_
 
 ## 💡 Next Steps
 
-- For the sake of this project, I'll keep updating this architecture based on further itterative requirements while i go extra creative with my personal project. Thanks
+- For the sake of this project, I'll keep updating this architecture based on further itterative requirements while i go extra creative with my other personal projects. Thank you 😉.
