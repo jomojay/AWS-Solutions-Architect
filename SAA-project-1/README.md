@@ -22,7 +22,7 @@ This personal project delivers a low‑latency, highly available, and secure e�
 </div>
 
 _Key components_  
-1. **Edge CDN (CloudFront):** Caches static assets (product images, frontend(html, CSS, JS)) at POPs across Africa (edge locations in Lagos, Nairobi, Johannesburg and Cape Town).  
+1. **Edge CDN (CloudFront):** Caches static assets (product images, frontend(html, CSS, JS)) at edge locations across Africa (`Lagos`, `Nairobi`, `Johannesburg` and `Cape Town`).  
 2. **API Gateway + Lambda:** Serverless front door for dynamic requests; scales on demand, zero server management.  
 3. **Aurora Serverless (PostgreSQL):** Auto‑scaling relational database for user profiles and orders.  
 4. **S3 + CloudFront:** Versioned and encrypted buckets for static frontend, product images, behind a secure CDN.  
